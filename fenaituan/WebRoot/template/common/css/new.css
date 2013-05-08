@@ -1,0 +1,76 @@
+@charset "utf-8";
+/*CSS reset*/
+html{color:#000;background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+a:link,a:visited{text-decoration: none;color:#676767;}
+a:hover{text-decoration: underline;color:red;}
+
+/*首页*/
+.webTop{width: 1000px;margin: 0 auto;height: 407px;}
+.webTop .left{width: 205px;border: 2px solid #444;height: 407px;margin-right: 5px;float: left;display: inline;}
+.webTop .right{width: 786px;height: 407px;float: left;}
+.webTop .right .banner{width: 786px;height: 260px;margin-bottom: 3px;}
+.webTop .right .bannerTwo{width: 786px;height: 148px;background-color: #CCC;}
+.webTop .bottom{width: 1000px;height: 270px;margin-top: 5px;margin-bottom: 5px;}
+.webTop .bottom .leftProduct{width: 720px;height: 270px;float: left;margin-right: 5px;background-color: #CCC;}
+.webTop .bottom .adPic{width: 275px;height: 270px;float: right;}
+.webTop .bottom .adPic img{width: 275px;height: 270px;}
+
+
+.productsList{width: 1000px;overflow: hidden;margin: 5px auto 0;}
+.productContent{width: 1000px;height: 406px;}
+.productContent .left{width: 210px;height: 406px;float: left;}
+.productContent .left .productsTitle{width: 210px;height: 43px;}
+.productContent .left .productsLine{width: 206px;height: 361px;}
+.productContent .left .productsLine .lists li{width: 90px;height: 24px;line-height: 24px;float: left;padding-left: 13px;}
+.productContent .center{width: 610px;height: 404px;float: left;}
+.productContent .center .productShow1{width: 150px;height: 200px;margin: 0 2px;float: left;display: inline;}
+.productContent .center .productShow{width: 150px;height: 200px;margin-right: 2px;float: left;display: inline;}
+.productContent .center .productImgs{width: 150px;height: 150px;}
+.productContent .center .productImgs img{width: 150px;height: 150px;}
+.productContent .center .productText{width: 140px;height: 40px;padding: 5px;font-size: 12px;}
+.productContent .center .productText .productOldPr{color: #676767;text-decoration: line-through;}
+.productContent .center .productText .productNewPr{font-size: 16px;color: red;}
+.productContent .right{width: 180px;height: 404px;float: left;}
+.productContent .right .rightPic,.productContent .right .rightPic img{width: 180px;height: 150px;}
+.productContent .right .rightPic1,.productContent .right .rightPic1 img{width: 180px;height: 104px;}
+
+
+.daily{color:red;}
+.daily .left .productsTitle{background:red url(../images/baihuo.jpg) 0 0 no-repeat;}
+.daily .left{background: url(../images/dailyBg.jpg) 0 bottom no-repeat;}
+.daily .left .productsLine{border-left: 2px solid red;border-bottom: 2px solid red;border-right: 2px solid red;}
+.daily .center,.daily .right{border-top: 2px solid red;}
+
+.dianqi{color:#855c96;}
+.dianqi .left .productsTitle{background:#855c96 url(../images/dianqi.jpg) 0 0 no-repeat;}
+.dianqi .left{background: url(../images/dailyBg.jpg) 0 bottom no-repeat;}
+.dianqi .left .productsLine{border-left: 2px solid #855c96;border-bottom: 2px solid #855c96;border-right: 2px solid #855c96;}
+.dianqi .center,.dianqi .right{border-top: 2px solid #855c96;}
+
+.fushi{color:#53ad70;}
+.fushi .left .productsTitle{background:#53ad70 url(../images/fushi.jpg) 0 0 no-repeat;}
+.fushi .left{background: url(../images/dailyBg.jpg) 0 bottom no-repeat;}
+.fushi .left .productsLine{border-left: 2px solid #53ad70;border-bottom: 2px solid #53ad70;border-right: 2px solid #53ad70;}
+.fushi .center,.fushi .right{border-top: 2px solid #53ad70;}
+
+.tiyu{color:#5595b1;}
+.tiyu .left .productsTitle{background:#5595b1 url(../images/tiyu.jpg) 0 0 no-repeat;}
+.tiyu .left{background: url(../images/dailyBg.jpg) 0 bottom no-repeat;}
+.tiyu .left .productsLine{border-left: 2px solid #5595b1;border-bottom: 2px solid #5595b1;border-right: 2px solid #5595b1;}
+.tiyu .center,.tiyu .right{border-top: 2px solid #5595b1;}
+

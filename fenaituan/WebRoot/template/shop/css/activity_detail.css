@@ -1,0 +1,425 @@
+@charset "utf-8";
+
+TABLE {
+	BORDER-COLLAPSE: collapse;
+	empty-cells: show
+}
+
+.pages_btns {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 8px;
+	OVERFLOW: hidden;
+	WIDTH: 100%;
+	PADDING-TOP: 0px
+}
+
+.pages_btns .pages EM {
+	LINE-HEIGHT: 24px
+}
+
+.pages {
+	BACKGROUND: #f7f7f7;
+	FLOAT: left;
+	OVERFLOW: hidden;
+	COLOR: #999;
+	LINE-HEIGHT: 24px;
+	HEIGHT: 24px;
+	BORDER: #ddd 1px solid;
+	margin-right: 6px;
+	BORDER-RIGHT: none
+}
+
+.pages A {
+	PADDING-RIGHT: 6px;
+	PADDING-LEFT: 6px;
+	FLOAT: left;
+	PADDING-BOTTOM: 0px;
+	LINE-HEIGHT: 24px;
+	PADDING-TOP: 0px;
+	BORDER-RIGHT: #ddd 1px solid
+}
+
+.pages A:hover {
+	BACKGROUND-COLOR: #fff
+}
+
+.pages A.prev {
+	LINE-HEIGHT: 24px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px
+}
+
+.pages A.next {
+	LINE-HEIGHT: 24px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px;
+	BORDER-RIGHT: #ddd 1px solid
+}
+
+.pages STRONG {
+	PADDING-RIGHT: 6px;
+	PADDING-LEFT: 6px;
+	FLOAT: left;
+	LINE-HEIGHT: 24px;
+	BACKGROUND: #e0e0e0;
+	BORDER-RIGHT: #ddd 1px solid;
+	COLOR: #090
+}
+
+.pages EM {
+	PADDING-RIGHT: 6px;
+	PADDING-LEFT: 6px;
+	FLOAT: left;
+	LINE-HEIGHT: 24px;
+	BORDER-RIGHT: #ddd 1px solid
+}
+
+.mainbox {
+	BORDER: #ddd 1px solid;
+	PADDING: 1px;
+	BACKGROUND: #fff;
+	MARGIN-BOTTOM: 10px
+}
+
+.mainbox H1 {
+	PADDING-LEFT: 1em;
+	BACKGROUND: url(../images/ejforum/header_bg.gif) repeat-x 0px 0px;
+	COLOR: #fff;
+	LINE-HEIGHT: 30px
+}
+
+.mainbox H3 {
+	PADDING-LEFT: 1em;
+	BACKGROUND: url(../images/ejforum/header_bg.gif) repeat-x 0px 0px;
+	COLOR: #fff;
+	LINE-HEIGHT: 29px;
+	padding-bottom: 1px
+}
+
+.mainbox H1 A {
+	COLOR: #fff
+}
+
+.mainbox H3 A {
+	COLOR: #fff;
+	height: 27px;
+	margin-top: 1px;
+	margin-bottom: 1px
+}
+
+.mainbox TABLE {
+	WIDTH: 100%
+}
+
+.mainbox THEAD TH {
+	PADDING-RIGHT: 5px;
+	PADDING-LEFT: 5px;
+	BACKGROUND: #f5f5f5;
+	PADDING-BOTTOM: 2px;
+	COLOR: #666;
+	LINE-HEIGHT: 22px;
+	PADDING-TOP: 2px
+}
+
+.mainbox THEAD TD {
+	PADDING-RIGHT: 5px;
+	PADDING-LEFT: 5px;
+	BACKGROUND: #f5f5f5;
+	PADDING-BOTTOM: 2px;
+	COLOR: #666;
+	LINE-HEIGHT: 22px;
+	PADDING-TOP: 2px
+}
+
+.mainbox THEAD.category TH {
+	BACKGROUND: url(../images/ejforum/cat_bg.gif) #f5f5f5;
+	padding-bottom: 0px
+}
+
+.mainbox THEAD.category TD {
+	BACKGROUND: url(../images/ejforum/cat_bg.gif) #f5f5f5;
+	padding-bottom: 0px
+}
+
+.mainbox THEAD.separation TD {
+	BORDER-TOP: #ddd 1px solid;
+	padding-bottom: 1px
+}
+
+.mainbox TBODY TH {
+	PADDING: 5px;
+	BORDER-TOP: #ddd 1px solid
+}
+
+.mainbox TBODY TD {
+	PADDING: 5px;
+	BORDER-TOP: #ddd 1px solid
+}
+
+.mainbox TBODY CITE {
+	LINE-HEIGHT: 1.3em
+}
+
+.mainbox TBODY EM {
+	LINE-HEIGHT: 1.3em
+}
+
+.mainbox TBODY.info TD {
+	color: #000;
+	border: none;
+	padding-left: 36px;
+	padding-bottom: 6px
+}
+
+.mainbox TBODY.info TD.subject {
+	BACKGROUND: url(../images/ejforum/box_bg.gif) #f5f5f5;
+	color: #090;
+	padding-left: 10px;
+	padding-top: 6px;
+	padding-bottom: 0px
+}
+
+.headactions {
+	PADDING-RIGHT: 10px;
+	PADDING-LEFT: 0px;
+	FLOAT: right;
+	PADDING-BOTTOM: 0px;
+	LINE-HEIGHT: 1em;
+	PADDING-TOP: 10px
+}
+
+.popmenu_popup {
+	BORDER: #ddd 1px solid;
+	PADDING: 10px;
+	BACKGROUND: url(../images/ejforum/box_bg.gif) #fff repeat-x 0px 0px;
+	OVERFLOW: hidden;
+	LINE-HEIGHT: 1.4em;
+	TEXT-ALIGN: left;
+}
+
+.viewtopic {
+	PADDING-BOTTOM: 1px
+}
+
+.viewtopic TABLE {
+	TABLE-LAYOUT: fixed
+}
+
+.viewtopic TD.postdetail {
+	PADDING-RIGHT: 1px;
+	PADDING-LEFT: 1px;
+	BACKGROUND: #fff;
+	PADDING-BOTTOM: 0px;
+	VERTICAL-ALIGN: top;
+	OVERFLOW: hidden;
+	BORDER-STYLE: none;
+	PADDING-TOP: 0px
+}
+
+.viewtopic TD.postfooter {
+	PADDING-RIGHT: 1px;
+	PADDING-LEFT: 1px;
+	BACKGROUND: #fff;
+	PADDING-BOTTOM: 0px;
+	VERTICAL-ALIGN: bottom;
+	OVERFLOW: hidden;
+	BORDER-STYLE: none;
+	PADDING-TOP: 0px
+}
+
+.viewtopic TD.postsign {
+	vertical-align: bottom;
+	border: 0px;
+	padding-left: 10px;
+	padding-bottom: 0px;
+	padding-top: 0px
+}
+
+.viewtopic TD.postauthor {
+	PADDING: 5px;
+	BACKGROUND: #f5f5f5;
+	OVERFLOW: hidden;
+	WIDTH: 180px;
+	BORDER-STYLE: none;
+	vertical-align: top
+}
+
+.postactions {
+	PADDING-RIGHT: 10px;
+	BORDER-TOP: #e8e8e8 1px solid;
+	PADDING-LEFT: 10px;
+	BACKGROUND: #f7f7f7;
+	PADDING-BOTTOM: 0px;
+	LINE-HEIGHT: 30px;
+	PADDING-TOP: 0px;
+	HEIGHT: 30px
+}
+
+.postactions INPUT {
+	FLOAT: right;
+	MARGIN: 5px 0px 0px 5px
+}
+
+.postactions P {
+	FLOAT: right
+}
+
+.postauthor CITE {
+	DISPLAY: block;
+	FONT-WEIGHT: bold;
+	MARGIN-BOTTOM: 5px;
+	OVERFLOW: hidden;
+	BORDER-BOTTOM: #ddd 1px solid;
+	HEIGHT: 21px
+}
+
+.postauthor DT {
+	FLOAT: left;
+	COLOR: #666;
+	MARGIN-RIGHT: 3px;
+	LINE-HEIGHT: 1.6em
+}
+
+.postauthor DD {
+	LINE-HEIGHT: 1.6em;
+	OVERFLOW: hidden
+}
+
+.postauthor P {
+	MARGIN: 0px 10px
+}
+
+.postauthor P EM {
+	COLOR: #090
+}
+
+.postauthor UL {
+	MARGIN: 5px 10px;
+	OVERFLOW: hidden;
+	LINE-HEIGHT: 1.6em
+}
+
+.postauthor LI {
+	BACKGROUND-POSITION: 0px 50%;
+	FLOAT: left;
+	OVERFLOW: hidden;
+	WIDTH: 48%;
+	TEXT-INDENT: 21px;
+	BACKGROUND-REPEAT: no-repeat;
+	HEIGHT: 1.6em
+}
+
+.postauthor LI.sms {
+	BACKGROUND-IMAGE: url(../../images/sendsms.gif)
+}
+
+.postauthor LI.friend {
+	BACKGROUND-IMAGE: url(../../images/user_add.gif)
+}
+
+.postauthor DL.profile {
+	MARGIN: 5px 10px
+}
+
+.postauthor CITE A {
+	PADDING: 5px;
+	FLOAT: left;
+	OVERFLOW: hidden;
+	HEIGHT: 10px
+}
+
+div.avatar {
+	MARGIN: 5px;
+	OVERFLOW: hidden;
+	WIDTH: 160px;
+	TEXT-ALIGN: center;
+}
+
+.postinfo {
+	PADDING-RIGHT: 5px;
+	PADDING-LEFT: 5px;
+	PADDING-BOTTOM: 0px;
+	OVERFLOW: hidden;
+	COLOR: #666;
+	LINE-HEIGHT: 26px;
+	PADDING-TOP: 0px;
+	BORDER-BOTTOM: #ddd 1px solid;
+	HEIGHT: 26px
+}
+
+.postinfo STRONG {
+	PADDING-RIGHT: 3px;
+	PADDING-LEFT: 3px;
+	FLOAT: right;
+	PADDING-BOTTOM: 0px;
+	CURSOR: pointer;
+	COLOR: #090;
+	LINE-HEIGHT: 26px ! important;
+	PADDING-TOP: 0px;
+	MARGIN-LEFT: 5px
+}
+
+* HTML .postinfo STRONG {
+	MARGIN-TOP: -2px
+}
+
+.postinfo STRONG SUP {
+	FONT-WEIGHT: normal;
+	MARGIN-LEFT: 1px;
+	COLOR: #999
+}
+
+.postcontent {
+	PADDING: 10px;
+	OVERFLOW-X: hidden;
+	MIN-HEIGHT: 100px ! important;
+	HEIGHT: auto ! important
+}
+
+.postcontent * {
+	LINE-HEIGHT: normal
+}
+
+.postcontent H2 {
+	FONT-SIZE: 1.17em;
+	MARGIN-BOTTOM: 0.5em
+}
+
+.postcontent .box {
+	BORDER: 0px;
+	MARGIN: 5px 0px
+}
+
+.postcontent .box TBODY TH {
+	BORDER-TOP-COLOR: #e8e8e8
+}
+
+.postcontent .box TBODY TD {
+	BORDER-TOP-COLOR: #e8e8e8
+}
+
+.postbtn {
+	FLOAT: right;
+	MARGIN-LEFT: 10px;
+	CURSOR: pointer;
+}
+
+.replybtn {
+	FLOAT: right;
+}
+
+.pages_btns {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 8px;
+	OVERFLOW: hidden;
+	WIDTH: 100%;
+	PADDING-TOP: 0px;
+}
+
+table.listTable th {
+	width: 190px;
+}
