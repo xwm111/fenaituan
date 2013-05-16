@@ -9,6 +9,18 @@
 <#if (systemConfig.metaDescription)! != ""><meta name="description" content="${systemConfig.metaDescription}" /></#if>
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <#include "/WEB-INF/template/common/include.ftl">
+<link rel="stylesheet" href="css/new.css" />
+<link href="css/nav.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/bcastr.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#rotate > ul').tabs({ fx: { opacity: 'toggle' } }).tabs('rotate', 2000);
+    });
+</script>
+<link rel="stylesheet" href="css/zTreeStyle.css" type="text/css"/>
+<script type="text/javascript" src="js/jquery.ztree.all-3.4.min.js"></script>
+
 <link href="${base}/template/shop/css/login.css" rel="stylesheet" type="text/css" />
 <link href="${base}/template/shop/css/register.css" rel="stylesheet" type="text/css" />
 <link href="${base}/template/shop/css/index.css" rel="stylesheet" type="text/css" />
@@ -69,7 +81,7 @@ $(document).ready(function() {
 											</ul>
 										</#if>
 									</li>
-									<#if list_index + 1 == 5>
+									<#if list_index + 1 == 4>
 										<#break />
 									</#if>
 								</#list>
@@ -88,13 +100,19 @@ $(document).ready(function() {
 				<div class="scrollable">
 					<div class="items">
 						<div>
+							<a href="http://www.fenaituan.com" target="new">
 							<img src="${base}/upload/image/banner1.jpg" />
+							</a>
 						</div>
 						<div>
+							<a href="http://www.fenaituan.com" target="new">
 							<img src="${base}/upload/image/banner2.jpg" />
+							</a>
 						</div>
 						<div>
+							<a href="http://www.fenaituan.com" target="new">
 							<img src="${base}/upload/image/banner3.jpg" />
+							</a>
 						</div>
 					</div>
 					<div class="navi"></div>
@@ -147,44 +165,397 @@ $(document).ready(function() {
 		<div class="blank"></div>
 		<img src="${base}/upload/image/banner4.jpg" />
 		<div class="blank"></div>
-		<div class="newProduct">
-			<div class="left">
-				<ul class="newProductTab">
-					<#list rootProductCategoryList as list>
-						<li>
-							${list.name}
-						</li>
-						<#if list_index + 1 == 4>
-							<#break />
+		<div class="productsList">
+			<div class="productContent daily">
+				<div class="left">
+					<div class="productsTitle"></div>
+					<div class="productsLine">
+						<ul class="lists">
+							<#list rootProductCategoryList as list>
+								<#if (list.children != null && list.children?size > 0 && list.name == "日用百货")>
+									<#list list.children as list>
+										<li>
+											<a href="${base}/shop/product!list.action?id=${list.id}"><span class="icon">&nbsp;</span>${list.name}</a>
+										</li>
+									</#list>
+								</#if>
+	            			</#list>	
+						</ul>
+					</div>
+				</div>
+				<div class="center">
+					<#list floor1 as list>
+						<#if list_index == 0 || list_index == 4>
+							<div class="productShow1">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						<#else>
+							<div class="productShow">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
 						</#if>
 					</#list>
-				</ul>
+				</div>
+				<div class="right">
+					<div class="rightPic"><a href=""><img src="images/rightAd1.jpg" alt="" /></a></div>
+					<div class="rightPic1"><a href=""><img src="images/rightAd2.jpg" alt="" /></a></div>
+					<div class="rightPic"><a href=""><img src="images/rightAd3.jpg" alt="" /></a></div>
+				</div>
 			</div>
-			<div class="right">
-				<#list rootProductCategoryList as list>
-					<ul class="newProductTabContent">
-						<#list newProductMap[list.id] as list>
-							<li>
-								<a href="${base}${list.htmlFilePath}">
-									<img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" />
-									<#if (list.name?length < 12)>
-										<p title="${list.name}">${list.name}</p>
-									<#else>
-										<p title="${list.name}">${list.name[0..9]}...</p>
-									</#if>
-								</a>
-							</li>
-							<#if list_index + 1 == 4>
-								<#break>
+		</div>		
+		<div class="blank"></div>
+		<div class="productsList">
+			<div class="productContent tiyu">
+				<div class="left">
+					<div class="productsTitle"></div>
+					<div class="productsLine">
+						<ul class="lists">
+							<#list rootProductCategoryList as list>
+							<#if (list.children != null && list.children?size > 0 && list.name == "体育用品")>
+								<#list list.children as list>
+									<li>
+										<a href="${base}/shop/product!list.action?id=${list.id}"><span class="icon">&nbsp;</span>${list.name}</a>
+									</li>
+								</#list>
 							</#if>
-						</#list>
-					</ul>
-					<#if list_index + 1 == 4>
-						<#break />
-					</#if>
-				</#list>
+            			</#list>
+						</ul>
+					</div>
+				</div>
+				<div class="center">
+					<#list floor2 as list>
+						<#if list_index == 0 || list_index == 4>
+							<div class="productShow1">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						<#else>
+							<div class="productShow">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						</#if>
+					</#list>
+				</div>
+				<div class="right">
+					<div class="rightPic"><a href=""><img src="images/rightAd1.jpg" alt="" /></a></div>
+					<div class="rightPic1"><a href=""><img src="images/rightAd2.jpg" alt="" /></a></div>
+					<div class="rightPic"><a href=""><img src="images/rightAd3.jpg" alt="" /></a></div>
+				</div>
 			</div>
-		</div>
+		</div>		
+		<div class="blank"></div>
+		<div class="productsList">
+			<div class="productContent diannao">
+				<div class="left">
+					<div class="productsTitle"></div>
+					<div class="productsLine">
+						<ul class="lists">
+							<#list rootProductCategoryList as list>
+								<#if (list.children != null && list.children?size > 0 && list.name == "电脑配件")>
+									<#list list.children as list>
+										<li>
+											<a href="${base}/shop/product!list.action?id=${list.id}"><span class="icon">&nbsp;</span>${list.name}</a>
+										</li>
+									</#list>
+								</#if>
+	            			</#list>
+						</ul>
+					</div>
+				</div>
+				<div class="center">
+					<#list floor3 as list>
+						<#if list_index == 0 || list_index == 4>
+							<div class="productShow1">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						<#else>
+							<div class="productShow">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						</#if>
+					</#list>
+				</div>
+				<div class="right">
+					<div class="rightPic"><a href=""><img src="images/rightAd1.jpg" alt="" /></a></div>
+					<div class="rightPic1"><a href=""><img src="images/rightAd2.jpg" alt="" /></a></div>
+					<div class="rightPic"><a href=""><img src="images/rightAd3.jpg" alt="" /></a></div>
+				</div>
+			</div>
+		</div>		
+		<div class="blank"></div>
+		<div class="productsList">
+			<div class="productContent meirong">
+				<div class="left">
+					<div class="productsTitle"></div>
+					<div class="productsLine">
+						<ul class="lists">
+							<#list rootProductCategoryList as list>
+								<#if (list.children != null && list.children?size > 0 && list.name == "美容化妆卫生护理")>
+									<#list list.children as list>
+										<li>
+											<a href="${base}/shop/product!list.action?id=${list.id}"><span class="icon">&nbsp;</span>${list.name}</a>
+										</li>
+									</#list>
+								</#if>
+	            			</#list>
+						</ul>
+					</div>
+				</div>
+				<div class="center">
+					<#list floor4 as list>
+						<#if list_index == 0 || list_index == 4>
+							<div class="productShow1">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						<#else>
+							<div class="productShow">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						</#if>
+					</#list>
+				</div>
+				<div class="right">
+					<div class="rightPic"><a href=""><img src="images/rightAd1.jpg" alt="" /></a></div>
+					<div class="rightPic1"><a href=""><img src="images/rightAd2.jpg" alt="" /></a></div>
+					<div class="rightPic"><a href=""><img src="images/rightAd3.jpg" alt="" /></a></div>
+				</div>
+			</div>
+		</div>		
+		<div class="blank"></div>
+		<div class="productsList">
+			<div class="productContent qinshi">
+				<div class="left">
+					<div class="productsTitle"></div>
+					<div class="productsLine">
+						<ul class="lists">
+							<#list rootProductCategoryList as list>
+								<#if (list.children != null && list.children?size > 0 && list.name == "寝室清洁用品")>
+									<#list list.children as list>
+										<li>
+											<a href="${base}/shop/product!list.action?id=${list.id}"><span class="icon">&nbsp;</span>${list.name}</a>
+										</li>
+									</#list>
+								</#if>
+	            			</#list>
+						</ul>
+					</div>
+				</div>
+				<div class="center">
+					<#list floor5 as list>
+						<#if list_index == 0 || list_index == 4>
+							<div class="productShow1">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						<#else>
+							<div class="productShow">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						</#if>
+					</#list>
+				</div>
+				<div class="right">
+					<div class="rightPic"><a href=""><img src="images/rightAd1.jpg" alt="" /></a></div>
+					<div class="rightPic1"><a href=""><img src="images/rightAd2.jpg" alt="" /></a></div>
+					<div class="rightPic"><a href=""><img src="images/rightAd3.jpg" alt="" /></a></div>
+				</div>
+			</div>
+		</div>		
+		<div class="blank"></div>
+		<div class="productsList">
+			<div class="productContent xiuxian">
+				<div class="left">
+					<div class="productsTitle"></div>
+					<div class="productsLine">
+						<ul class="lists">
+							<#list rootProductCategoryList as list>
+								<#if (list.children != null && list.children?size > 0 && list.name == "休闲食品")>
+									<#list list.children as list>
+										<li>
+											<a href="${base}/shop/product!list.action?id=${list.id}"><span class="icon">&nbsp;</span>${list.name}</a>
+										</li>
+									</#list>
+								</#if>
+	            			</#list>
+						</ul>
+					</div>
+				</div>
+				<div class="center">
+					<#list floor6 as list>
+						<#if list_index == 0 || list_index == 4>
+							<div class="productShow1">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						<#else>
+							<div class="productShow">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						</#if>
+					</#list>
+				</div>
+				<div class="right">
+					<div class="rightPic"><a href=""><img src="images/rightAd1.jpg" alt="" /></a></div>
+					<div class="rightPic1"><a href=""><img src="images/rightAd2.jpg" alt="" /></a></div>
+					<div class="rightPic"><a href=""><img src="images/rightAd3.jpg" alt="" /></a></div>
+				</div>
+			</div>
+		</div>		
+		<div class="blank"></div>
+		<div class="productsList">
+			<div class="productContent liwu">
+				<div class="left">
+					<div class="productsTitle"></div>
+					<div class="productsLine">
+						<ul class="lists">
+							<#list rootProductCategoryList as list>
+								<#if (list.children != null && list.children?size > 0 && list.name == "浪漫礼物")>
+									<#list list.children as list>
+										<li>
+											<a href="${base}/shop/product!list.action?id=${list.id}"><span class="icon">&nbsp;</span>${list.name}</a>
+										</li>
+									</#list>
+								</#if>
+	            			</#list>
+						</ul>
+					</div>
+				</div>
+				<div class="center">
+					<#list floor7 as list>
+						<#if list_index == 0 || list_index == 4>
+							<div class="productShow1">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						<#else>
+							<div class="productShow">
+								<div class="productImgs"><a href="${list.htmlFilePath}"><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						</#if>
+					</#list>
+				</div>
+				<div class="right">
+					<div class="rightPic"><a href=""><img src="images/rightAd1.jpg" alt="" /></a></div>
+					<div class="rightPic1"><a href=""><img src="images/rightAd2.jpg" alt="" /></a></div>
+					<div class="rightPic"><a href=""><img src="images/rightAd3.jpg" alt="" /></a></div>
+				</div>
+			</div>
+		</div>		
+		<div class="blank"></div>
+		<div class="productsList">
+			<div class="productContent dianqi">
+				<div class="left">
+					<div class="productsTitle"></div>
+					<div class="productsLine">
+						<ul class="lists">
+							<#list rootProductCategoryList as list>
+								<#if (list.children != null && list.children?size > 0 && list.name == "电器")>
+									<#list list.children as list>
+										<li>
+											<a href="${base}/shop/product!list.action?id=${list.id}"><span class="icon">&nbsp;</span>${list.name}</a>
+										</li>
+									</#list>
+								</#if>
+	            			</#list>
+						</ul>
+					</div>
+				</div>
+				<div class="center">
+					<#list floor8 as list>
+						<#if list_index == 0 || list_index == 4>
+							<div class="productShow1">
+								<div class="productImgs"><a href=""><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						<#else>
+							<div class="productShow">
+								<div class="productImgs"><a href=""><img src="${base}${(list.productImageList[0].thumbnailProductImagePath)!systemConfig.defaultThumbnailProductImagePath}" alt="${list.name}" /></a></div>
+								<div class="productText">
+									<span class="productName"><a href="${list.htmlFilePath}">${list.name}</a></span>
+									<span class="productOldPr">${list.marketPrice}</span>
+								<span class="productNewPr">${list.price}</span>
+								</div>
+							</div>
+						</#if>
+					</#list>
+				</div>
+				<div class="right">
+					<div class="rightPic"><a href=""><img src="images/rightAd1.jpg" alt="" /></a></div>
+					<div class="rightPic1"><a href=""><img src="images/rightAd2.jpg" alt="" /></a></div>
+					<div class="rightPic"><a href=""><img src="images/rightAd3.jpg" alt="" /></a></div>
+				</div>
+			</div>
+		</div>		
 		<div class="blank"></div>
 		<div class="bodyLeft">
 			<div class="hotProduct">
