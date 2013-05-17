@@ -9,7 +9,7 @@ public class DBConnection {
 	public static Connection getCon()
 	{
 		Connection con=null;
-		String url="jdbc:mysql://127.0.0.1:3306/shopxx?user=root&password=123";
+		String url="jdbc:mysql://127.0.0.1:3306/shopxx?user=root&password=root";
 		try {
 			con = DriverManager.getConnection(url);
 		} catch (SQLException e) {
