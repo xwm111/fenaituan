@@ -28,6 +28,7 @@ import net.shopxx.service.HtmlService;
 import net.shopxx.service.NavigationService;
 import net.shopxx.service.ProductCategoryService;
 import net.shopxx.service.RegionService;
+import net.shopxx.util.Constant;
 import net.shopxx.util.SystemConfigUtil;
 import net.shopxx.util.TemplateConfigUtil;
 
@@ -156,6 +157,23 @@ public class HtmlServiceImpl implements HtmlService {
 		data.put("regionData", regionService.getJsonArrayAll().toString());
 		data.put("rootProductCategoryList",
 				productCategoryService.getRootProductCategoryList());
+		data.put("floor1", productDao
+				.getProductList(productCategoryService.get("name", Constant.FLOOR1),0,Constant.MAX_CATEGORY_PRODUCT_LIST_COUNT));
+		data.put("floor2", productDao
+				.getProductList(productCategoryService.get("name", Constant.FLOOR2),0,Constant.MAX_CATEGORY_PRODUCT_LIST_COUNT));
+		data.put("floor3", productDao
+				.getProductList(productCategoryService.get("name", Constant.FLOOR3),0,Constant.MAX_CATEGORY_PRODUCT_LIST_COUNT));
+		data.put("floor4", productDao
+				.getProductList(productCategoryService.get("name", Constant.FLOOR4),0,Constant.MAX_CATEGORY_PRODUCT_LIST_COUNT));
+		data.put("floor5", productDao
+				.getProductList(productCategoryService.get("name", Constant.FLOOR5),0,Constant.MAX_CATEGORY_PRODUCT_LIST_COUNT));
+		data.put("floor6", productDao
+				.getProductList(productCategoryService.get("name", Constant.FLOOR6),0,Constant.MAX_CATEGORY_PRODUCT_LIST_COUNT));
+		data.put("floor7", productDao
+				.getProductList(productCategoryService.get("name", Constant.FLOOR7),0,Constant.MAX_CATEGORY_PRODUCT_LIST_COUNT));
+		data.put("floor8", productDao
+				.getProductList(productCategoryService.get("name", Constant.FLOOR8),0,Constant.MAX_CATEGORY_PRODUCT_LIST_COUNT));
+		
 		data.put("bestProductList", productDao
 				.getBestProductList(Product.MAX_BEST_PRODUCT_LIST_COUNT));
 		data.put("hotProductList", productDao

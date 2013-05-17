@@ -58,15 +58,6 @@ a:hover{text-decoration: underline;color:red;}
 .productContent .right .rightPic,.productContent .right .rightPic img{width: 180px;height: 150px;}
 .productContent .right .rightPic1,.productContent .right .rightPic1 img{width: 180px;height: 104px;}
 
-.hotProduct{padding-left: 35px;}
-.hotProduct .content {float:left;overflow:hidden;padding:14px 0;width:720px;}
-.hotProduct #products_wrap {width:32766px;}
-.hotProduct #products_wrap #list1,.hotProduct #products_wrap #list2 {float:left;}
-.hotProduct #products_wrap li {float:left;margin-right:6px;text-align:center;width:114px;}
-.hotProduct #products_wrap li span {display:block;height:114px;}
-.hotProduct #products_wrap li img {background:none repeat scroll 0 0 #FFFFFF;border:1px solid #D8D8D8;height:110px;padding:1px;width:110px;}
-
-
 .daily{color:#e4393c;}
 .daily .left .productsTitle{background:#e4393c url(../images/1F-e4393c.gif) 0 0 no-repeat;}
 .daily .left{background: url(../images/dailyBg.jpg) 0 bottom no-repeat;}
