@@ -51,6 +51,5 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xwork-core-2.1.6.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 6.0/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
